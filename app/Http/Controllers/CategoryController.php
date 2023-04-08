@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
-class Category extends Controller
+class CategoryController extends Controller
 {
+
+    private $category;
+
+    public function __construct (Category $category)
+    {
+        $this->category = $category;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $categories = $this->category->latest()->paginate();
+
+        return view('categories.index', \compact(['categories']));
     }
 
     /**
