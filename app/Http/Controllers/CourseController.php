@@ -24,7 +24,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = $this->course->latest()->paginate();
-       return view('courses.index',compact(['courses']));
+       return view('courses.index',compact('courses'));
     }
 
     /**
@@ -32,7 +32,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('courses.create', compact(['categories']));
+        return view('courses.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class CourseController extends Controller
     {
        $this->course->create($request->all());
 
-       return view('courses.index');
+       return redirect()->route('courses.index');
     }
 
     /**

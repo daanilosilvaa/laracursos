@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard-Categorias')
+@section('title', "Categorias do Curso: $course->name  ")
 
 @section('content_header')
     <div class="row">
-        <h1 class="col-md-11">Categorias</h1>
-        <a href="{{ route('categories.create') }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+        <h1 class="col-md-11">Categorias do Curso: <b>{{ $course->name  }}</b></h1>
+        <a href="{{ route('courses.create') }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
 
     </div>
 
@@ -21,21 +21,14 @@
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
-                            <th scope="col">Ativo</th>
-                            <th width="170" class="text-center">Ação</th>
+                            <th scope="col">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($categories as $category)
                             <tr>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ $category->active == 'A' ? 'ATIVO' : 'INATIVO' }}</td>
-                                <td class="text-center">
-                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary"><i
-                                            class="fas fa-pen"></i></a>
-                                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning"><i
-                                            class="fas fa-eye"></i></a>
-                                </td>
+                                <td><a href="" class="btn btn-warning">Remover</a></td>
                             </tr>
                         @endforeach
 

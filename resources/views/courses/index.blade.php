@@ -46,7 +46,7 @@
                                     <a title="Link de venda" href="{{ $course->link }}" target="_blank" class="btn btn-dark"><i
                                             class="fas fa-link"></i></a>
                                     <a title="Imagens do Curso" href="#" class="btn btn-secondary"> <i class="fas fa-image"></i></a>
-                                    <a title="Categorias Vinculadas ao Curso" href="#" class="btn btn-danger"><i
+                                    <a title="Categorias Vinculadas ao Curso" href="{{ route('course.categories', $course->id) }}" class="btn btn-danger"><i
                                         class="fas fa-list"></i></a>
                                 </td>
                             </tr>
@@ -55,6 +55,13 @@
                     </tbody>
                 </table>
 
+            </div>
+            <div class="card-footer">
+                @if (@isset($filters))
+                {!! $courses->appends($filters)->links() !!}
+                @else
+                    {!! $courses->links() !!}
+                @endif
             </div>
         </div>
 

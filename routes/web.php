@@ -4,6 +4,7 @@ use App\Http\Controllers\{
     ProfileController,
     CategoryController,
     CourseController,
+    CourseCategoryController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('categories', CategoryController::class);
+
     Route::resource('courses', CourseController::class);
+    Route::get('course/{id}/categories', [CourseCategoryController::class, 'categories'])->name('course.categories');
 });
 
 require __DIR__.'/auth.php';
