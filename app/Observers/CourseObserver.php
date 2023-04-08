@@ -9,17 +9,17 @@ class CourseObserver
     /**
      * Handle the Course "created" event.
      */
-    public function created(Course $course): void
+    public function creating(Course $course): void
     {
-        //
+       $course->price = "00.00";
     }
 
     /**
      * Handle the Course "updated" event.
      */
-    public function updated(Course $course): void
+    public function updating(Course $course): void
     {
-        //
+       $course->price = $course->getOriginal('price_current');
     }
 
     /**
