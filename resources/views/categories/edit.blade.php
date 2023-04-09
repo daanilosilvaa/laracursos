@@ -13,7 +13,7 @@
             <div class="max-w-xl">
                 <form action="{{ route('categories.update', $category->id) }}" class="form" method="post" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT');
+                    @method('PUT')
                     @include('categories._partials.form')
                 </form>
             </div>

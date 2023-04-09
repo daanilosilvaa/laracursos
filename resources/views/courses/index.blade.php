@@ -57,7 +57,7 @@
 
             </div>
             <div class="card-footer">
-                @if (@isset($filters))
+                @if (isset($filters))
                 {!! $courses->appends($filters)->links() !!}
                 @else
                     {!! $courses->links() !!}

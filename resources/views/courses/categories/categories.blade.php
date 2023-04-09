@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="row">
         <h1 class="col-md-11">Categorias do Curso: <b>{{ $course->name  }}</b></h1>
-        <a href="{{ route('courses.create') }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+        <a href="{{ route('course.categories.available',$course->id) }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
 
     </div>
 
@@ -21,14 +21,14 @@
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
-                            <th scope="col">Ação</th>
+                            <th with="50">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($course->categories   as $category)
                             <tr>
                                 <td>{{ $category->name }}</td>
-                                <td><a href="" class="btn btn-warning">Remover</a></td>
+                                <td style="width=10px;"><a href="{{ route('course.category.detach',[$course->id,$category->id]) }}" class="btn btn-danger"><i class="fas fa-ban"></i></a></td>
                             </tr>
                         @endforeach
 
@@ -36,13 +36,13 @@
                 </table>
 
             </div>
-            <div class="card-footer">
-                @if (@isset($filters))
+            {{-- <div class="card-footer">
+                @if (isset($filters))
                 {!! $categories->appends($filters)->links() !!}
                 @else
                     {!! $categories->links() !!}
                 @endif
-            </div>
+            </div> --}}
         </div>
 
     </div>

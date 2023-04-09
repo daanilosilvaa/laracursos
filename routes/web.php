@@ -28,14 +28,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('course/{id}/category/{idCategory}', [CourseCategoryController::class, 'detachCourseCategories'])->name('course.category.detach');
+    Route::post('course/{id}/categories', [CourseCategoryController::class, 'attachCourseCategories'])->name('course.categories.attach');
+    Route::any('course/{id}/categories/create', [CourseCategoryController::class, 'categoriesAvailable'])->name('course.categories.available');
+    Route::get('course/{id}/categories', [CourseCategoryController::class, 'categories'])->name('course.categories');
+
+    Route::resource('courses', CourseController::class);
+    Route::resource('categories', CategoryController::class);
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('categories', CategoryController::class);
 
-    Route::resource('courses', CourseController::class);
-    Route::get('course/{id}/categories', [CourseCategoryController::class, 'categories'])->name('course.categories');
+
+
 });
 
 require __DIR__.'/auth.php';
