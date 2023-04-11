@@ -5,6 +5,7 @@ use App\Http\Controllers\{
     CategoryController,
     CourseController,
     CourseCategoryController,
+    ImageController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::delete('course/{idCourse}/images/{id}', [ImageController::class, 'destroy'])->name('course.images.destroy');
+    Route::post('course/{id}/images', [ImageController::class, 'store'])->name('course.images.store');
+    Route::any('course/{id}/image', [ImageController::class, 'create'])->name('course.image.create');
+    Route::get('course/{id}/images', [ImageController::class, 'index'])->name('course.images.index');
 
     Route::get('course/{id}/category/{idCategory}', [CourseCategoryController::class, 'detachCourseCategories'])->name('course.category.detach');
     Route::post('course/{id}/categories', [CourseCategoryController::class, 'attachCourseCategories'])->name('course.categories.attach');

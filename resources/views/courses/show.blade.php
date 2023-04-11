@@ -12,6 +12,9 @@
         <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
             <div class="max-w-xl">
                 <ul>
+                    <li> <img src="{{ url("storage/$course->image") }}" alt=""></li>
+                </ul>
+                <ul>
                     <li><strong>Nome: </strong> {{ $course->name }}</li>
                 </ul>
                 <ul>
@@ -35,7 +38,7 @@
                 <div class="form-group col-md-1">
                    <a href="{{ url()->previous() }}" class="btn btn-warning">Voltar</a>
                 </div>
-               <form action="{{ route('categories.destroy', $course->id) }}" method="post">
+               <form action="{{ route('courses.destroy', $course->id) }}" method="post">
                 <div class="form-group">
                     @csrf
                     @method('DELETE')

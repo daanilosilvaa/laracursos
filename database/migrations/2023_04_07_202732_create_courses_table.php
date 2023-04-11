@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->longText('description');
+            $table->string('image');
             $table->double('price',10,2);
             $table->double('price_current',10,2);
             $table->double('price_commission',10,2);

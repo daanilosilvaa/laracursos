@@ -40,7 +40,14 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-       $this->course->create($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('image') && $request->image->isValid()) {
+            $data['image'] = $request->image->store("public/courses/photos/".$data['name']);
+
+         }
+
+         $this->course->create($data);
 
        return redirect()->route('courses.index');
     }
@@ -88,6 +95,12 @@ class CourseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        if(!$course = $this->course->find($id)){
+            return redirect()->back();
+        }
+
+        $course->delete();
+
+        return redirect()->route('courses.index');
     }
 }

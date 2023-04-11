@@ -32,6 +32,7 @@
                         @foreach ($courses as $course)
                             <tr>
                                 <td>{{ $course->name }}</td>
+                                <td>{{ $course->image }}</td>
                                 <td title="Preço de Venda Anterior">{{ number_format($course->price, 2, ',', '.') }}</td>
                                 <td title="Preço de Venda Autal">{{ number_format($course->price_current, 2, ',', '.') }}
                                 </td>
@@ -45,7 +46,7 @@
                                             class="fas fa-eye"></i></a>
                                     <a title="Link de venda" href="{{ $course->link }}" target="_blank" class="btn btn-dark"><i
                                             class="fas fa-link"></i></a>
-                                    <a title="Imagens do Curso" href="#" class="btn btn-secondary"> <i class="fas fa-image"></i></a>
+                                    <a title="Imagens do Curso" href="{{ route('course.images.index', $course->id) }}" class="btn btn-secondary"> <i class="fas fa-image"></i></a>
                                     <a title="Categorias Vinculadas ao Curso" href="{{ route('course.categories', $course->id) }}" class="btn btn-danger"><i
                                         class="fas fa-list"></i></a>
                                 </td>

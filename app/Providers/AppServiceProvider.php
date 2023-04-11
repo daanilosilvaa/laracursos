@@ -5,9 +5,11 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\{
     Course,
+    Image,
 };
 use App\Observers\{
     CourseObserver,
+    ImageObserver,
 };
 
 use App\Repositories\Contracts\{
@@ -37,5 +39,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Course::observe(CourseObserver::class);
+        Image::observe(ImageObserver::class);
     }
 }
