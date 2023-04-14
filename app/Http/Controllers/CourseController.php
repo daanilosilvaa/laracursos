@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\{
     Course,
     Category,
@@ -43,7 +44,7 @@ class CourseController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('image') && $request->image->isValid()) {
-            $data['image'] = $request->image->store("public/courses/photos/".$data['name']);
+            $data['image'] = $request->image->store("public/courses/{$request->name}/photos");
 
          }
 
@@ -82,10 +83,19 @@ class CourseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        if(!$course = $this->course->find($id)){
+
+        if (!$course = $this->course->find($id)) {
             return redirect()->back();
         }
-        $course->update($request->all());
+        $data = $request->all();
+        if ($request->hasFile('image') && $request->image->isValid()) {
+            if(Storage::exists($course->image)){
+                Storage::delete($course->image);
+
+            }
+            $data['image'] = $request->image->store("public/courses/{$request->name}/photos");
+         }
+        $course->update($data);
 
         return redirect()->route('courses.index');
     }
