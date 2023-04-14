@@ -20,6 +20,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th scope="col">image</th>
                             <th scope="col">Nome</th>
                             <th scope="col" title="Preço de Venda Anterior">Preço Ant.</th>
                             <th scope="col" title="Preço de Venda Atual">Preco Atu.</th>
@@ -31,8 +32,8 @@
                     <tbody>
                         @foreach ($courses as $course)
                             <tr>
+                                <td><img src="{{ url("storage/$course->image ") }}" alt="{{ $course->name }}"  style="max-height: 120px"></td>
                                 <td>{{ $course->name }}</td>
-                                <td>{{ $course->image }}</td>
                                 <td title="Preço de Venda Anterior">{{ number_format($course->price, 2, ',', '.') }}</td>
                                 <td title="Preço de Venda Autal">{{ number_format($course->price_current, 2, ',', '.') }}
                                 </td>
@@ -45,8 +46,7 @@
                                     <a href="{{ route('courses.show', $course->id) }}" class="btn btn-warning"><i
                                             class="fas fa-eye"></i></a>
                                     <a title="Link de venda" href="{{ $course->link }}" target="_blank" class="btn btn-dark"><i
-                                            class="fas fa-link"></i></a>
-                                    <a title="Imagens do Curso" href="{{ route('course.images.index', $course->id) }}" class="btn btn-secondary"> <i class="fas fa-image"></i></a>
+                                            class="fas fa-link"></i></a>    
                                     <a title="Categorias Vinculadas ao Curso" href="{{ route('course.categories', $course->id) }}" class="btn btn-danger"><i
                                         class="fas fa-list"></i></a>
                                 </td>
