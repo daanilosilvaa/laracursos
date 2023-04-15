@@ -32,7 +32,7 @@
                     <tbody>
                         @foreach ($courses as $course)
                             <tr>
-                                <td><img src="{{ url("storage/$course->image ") }}" alt="{{ $course->name }}"  style="max-height: 120px"></td>
+                                <td><img src="{{ url("storage/$course->image ") }}" alt="{{ $course->name }}" class="rounded-circle" style="max-height: 80px;"></td>
                                 <td>{{ $course->name }}</td>
                                 <td title="Preço de Venda Anterior">{{ number_format($course->price, 2, ',', '.') }}</td>
                                 <td title="Preço de Venda Autal">{{ number_format($course->price_current, 2, ',', '.') }}
@@ -46,7 +46,7 @@
                                     <a href="{{ route('courses.show', $course->id) }}" class="btn btn-warning"><i
                                             class="fas fa-eye"></i></a>
                                     <a title="Link de venda" href="{{ $course->link }}" target="_blank" class="btn btn-dark"><i
-                                            class="fas fa-link"></i></a>    
+                                            class="fas fa-link"></i></a>
                                     <a title="Categorias Vinculadas ao Curso" href="{{ route('course.categories', $course->id) }}" class="btn btn-danger"><i
                                         class="fas fa-list"></i></a>
                                 </td>

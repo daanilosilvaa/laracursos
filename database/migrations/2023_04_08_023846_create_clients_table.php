@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();
+            $table->string('description');
             $table->enum('active_phone', ['A', 'I'])->default('A');
             $table->enum('active_email', ['A', 'I'])->default('A');
             $table->enum('phone_whats', ['A', 'I'])->default('A');

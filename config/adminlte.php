@@ -326,6 +326,11 @@ return [
             'url'  => '/courses',
             'icon' => 'fas fa-fw fa-book',
         ],
+        [
+            'text' => 'Clientes',
+            'url'  => '/clients',
+            'icon' => 'fas fa-fw fa-users',
+        ],
 
 
 
