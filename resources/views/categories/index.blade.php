@@ -17,11 +17,11 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                 </div>
-                <table class="table table-striped">
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
-                            <th scope="col">Ativo</th>
+                            <th scope="col" class="text-center">Ativo</th>
                             <th width="170" class="text-center">Ação</th>
                         </tr>
                     </thead>
@@ -29,7 +29,7 @@
                         @foreach ($categories as $category)
                             <tr>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ $category->active == 'A' ? 'ATIVO' : 'INATIVO' }}</td>
+                                <td class="text-center">{{ $category->active == 'A' ? 'ATIVO' : 'INATIVO' }}</td>
                                 <td class="text-center">
                                     <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary"><i
                                             class="fas fa-pen"></i></a>

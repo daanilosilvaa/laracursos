@@ -22,7 +22,7 @@
 
 <div class="row" style="justify-content: center">
     <div class="form-group col-md-1">
-       <a href="{{ url()->previous() }}" class="btn btn-warning">Voltar</a>
+       <a href="{{ route('categories.index') }}" class="btn btn-warning">Voltar</a>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-success">Enviar</button>

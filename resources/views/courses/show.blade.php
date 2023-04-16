@@ -36,7 +36,7 @@
             </div>
             <div class="row" style="justify-content: center">
                 <div class="form-group col-md-1">
-                   <a href="{{ url()->previous() }}" class="btn btn-warning">Voltar</a>
+                   <a href="{{ route('courses.index') }}" class="btn btn-warning">Voltar</a>
                 </div>
                <form action="{{ route('courses.destroy', $course->id) }}" method="post">
                 <div class="form-group">

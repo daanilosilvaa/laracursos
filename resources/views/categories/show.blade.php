@@ -18,7 +18,7 @@
             </div>
             <div class="row" style="justify-content: center">
                 <div class="form-group col-md-1">
-                   <a href="{{ url()->previous() }}" class="btn btn-warning">Voltar</a>
+                   <a href="{{ route('categories.index') }}" class="btn btn-warning">Voltar</a>
                 </div>
                <form action="{{ route('categories.destroy', $category->id) }}" method="post">
                 <div class="form-group">
