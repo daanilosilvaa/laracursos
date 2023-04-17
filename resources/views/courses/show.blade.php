@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard-Exibindo')
+@section('title', "Curso - {{ $course->name }}")
 
 @section('content_header')
-    <h1>Exibindo Course {{ $course->name }}</h1>
+    <h1>Exibindo Courso {{ $course->name }}</h1>
 @stop
 
 @section('content')

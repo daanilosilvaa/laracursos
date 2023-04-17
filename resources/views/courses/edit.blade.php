@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard-Editando Curso')
+@section('title', "Editando o : $course->name")
 
 @section('content_header')
     <h1>Editando o Curso {{ $course->name }}</h1>

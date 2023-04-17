@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard-Exibindo')
+@section('title', "Cliente - {$client->name}")
 
 @section('content_header')
     <h1>Exibindo Clientes {{ $client->name }}</h1>

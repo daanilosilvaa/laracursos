@@ -15,7 +15,7 @@ return [
     */
 
     'title' => 'Curso-Certo',
-    'title_prefix' => '',
+    'title_prefix' => 'Curso-Certo',
     'title_postfix' => '',
 
     /*
@@ -211,7 +211,7 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
+    'sidebar_collapse' => true,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
@@ -302,10 +302,10 @@ return [
         ],
 
         // Sidebar items:
-        // [
-        //     'type' => 'sidebar-menu-search',
-        //     'text' => 'search',
-        // ],
+        [
+            'type' => 'sidebar-menu-search',
+            'text' => 'search',
+        ],
         // [
         //     'text' => 'blog',
         //     'url'  => 'admin/blog',
@@ -330,6 +330,11 @@ return [
             'text' => 'Clientes',
             'url'  => '/clients',
             'icon' => 'fas fa-fw fa-users',
+        ],
+        [
+            'text' => 'TesteAPi/Cursos',
+            'url'  => '/api/courses',
+            'icon' => 'fas fa-fw fa-share',
         ],
 
 
