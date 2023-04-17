@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use App\Http\Requests\StoreUpdateClientRequest;
 
 class ClientController extends Controller
 {
@@ -34,7 +35,7 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateClientRequest $request)
     {
         $this->client->create($request->all());
 
@@ -68,7 +69,7 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateClientRequest $request, string $id)
     {
         if (!$client = $this->client->find($id)) {
             return \redirect()->back();

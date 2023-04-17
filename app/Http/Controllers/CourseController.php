@@ -8,6 +8,7 @@ use App\Models\{
     Course,
     Category,
 };
+use App\Http\Requests\StoreUpdateCourseRequest;
 
 class CourseController extends Controller
 {
@@ -39,7 +40,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateCourseRequest $request)
     {
         $data = $request->all();
 
@@ -81,7 +82,7 @@ class CourseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateCourseRequest $request, string $id)
     {
 
         if (!$course = $this->course->find($id)) {
