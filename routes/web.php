@@ -6,6 +6,8 @@ use App\Http\Controllers\{
     CourseController,
     CourseCategoryController,
     ClientController,
+    InfoCatchController,
+
 };
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +31,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    route::resource('/infocatchs', InfoCatchController::class);
 
     Route::resource('/clients', ClientController::class);
 

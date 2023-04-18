@@ -31,7 +31,9 @@ class StoreUpdateClientRequest extends FormRequest
         ];
 
         if ($this->method() == 'PUT') {
-            //nenhuma regra aplicada .
+           $rules = [
+            'email' => ['nullable', 'email'],
+           ];
         }
 
         return $rules;
