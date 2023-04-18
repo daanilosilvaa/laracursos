@@ -14,10 +14,12 @@ use App\Observers\{
 
 use App\Repositories\Contracts\{
     CourseRepositoryInterface,
+    CategoryRepositoryInterface,
 };
 
 use App\Repositories\{
     CourseRepository,
+    CategoryRepository,
 };
 
 class AppServiceProvider extends ServiceProvider
@@ -30,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
        $this->app->bind(
         CourseRepositoryInterface::class,
         CourseRepository::class
+       );
+       $this->app->bind(
+        CategoryRepositoryInterface::class,
+        CategoryRepository::class
        );
     }
 

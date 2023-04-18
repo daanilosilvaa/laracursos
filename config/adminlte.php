@@ -341,6 +341,11 @@ return [
             'url'  => '/api/courses',
             'icon' => 'fas fa-fw fa-share',
         ],
+        [
+            'text' => 'TesteAPi/Category',
+            'url'  => '/api/category',
+            'icon' => 'fas fa-fw fa-share',
+        ],
 
 
 

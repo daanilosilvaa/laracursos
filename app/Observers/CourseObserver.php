@@ -22,27 +22,4 @@ class CourseObserver
        $course->price = $course->getOriginal('price_current');
     }
 
-    /**
-     * Handle the Course "deleted" event.
-     */
-    public function deleted(Course $course): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Course "restored" event.
-     */
-    public function restored(Course $course): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Course "force deleted" event.
-     */
-    public function forceDeleted(Course $course): void
-    {
-        //
-    }
 }
