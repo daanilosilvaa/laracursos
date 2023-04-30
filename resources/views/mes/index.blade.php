@@ -29,7 +29,7 @@
                     <tbody>
                         @foreach ($mes as $me)
                             <tr>
-                                <td><img src="{{ url("storage/$me->image ") }}" alt="{{ $me->name }}" class="rounded-circle" style="max-height: 80px;"></td>
+                                <td><img src="{{ url("storage/$me->image ") }}" alt="{{ $me->name }}" class="rounded-circle" style="max-height: 150px;"></td>
                                 <td>{{ $me->title }}</td>
                                 <td>{{ $me->active }}</td>
 
