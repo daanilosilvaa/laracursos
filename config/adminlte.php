@@ -334,7 +334,13 @@ return [
         [
             'text' => 'Notificações',
             'url' => '/infocatchs',
-            'icon' => 'fas fa-fw fa-bell'
+            'icon' => 'fas fa-fw fa-bell ',
+
+        ],
+        [
+            'text' => 'Minha História',
+            'url' => '/mes',
+            'icon' => 'fas fa-fw fa-user-tie '
         ],
         [
             'text' => 'TesteAPi/Cursos',

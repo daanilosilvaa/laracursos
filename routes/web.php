@@ -7,6 +7,8 @@ use App\Http\Controllers\{
     CourseCategoryController,
     ClientController,
     InfoCatchController,
+    HomeController,
+    MeController,
 
 };
 use Illuminate\Support\Facades\Route;
@@ -22,15 +24,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'] );
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    route::resource('/mes', MeController::class);
 
     route::resource('/infocatchs', InfoCatchController::class);
 
