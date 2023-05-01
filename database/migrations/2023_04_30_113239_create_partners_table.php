@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('uuid');
             $table->string('name');
             $table->string('image');
+            $table->enum('active', ['A', 'I'])->default('A');
             $table->timestamps();
         });
     }
