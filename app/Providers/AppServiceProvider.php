@@ -6,10 +6,12 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\{
     Course,
     Image,
+    Partner,
 };
 use App\Observers\{
     CourseObserver,
     ImageObserver,
+    PartnerObserver,
 };
 
 use App\Repositories\Contracts\{
@@ -46,5 +48,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Course::observe(CourseObserver::class);
         Image::observe(ImageObserver::class);
+        Partner::observe(PartnerObserver::class);
     }
 }

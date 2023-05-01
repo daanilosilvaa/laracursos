@@ -9,6 +9,9 @@ use App\Http\Controllers\{
     InfoCatchController,
     HomeController,
     MeController,
+    PartnerController,
+    AboutController,
+    ContentAboutController,
 
 };
 use Illuminate\Support\Facades\Route;
@@ -31,16 +34,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    route::resource('/mes', MeController::class);
 
-    route::resource('/infocatchs', InfoCatchController::class);
+    Route::resource('/content_abouts', ContentAboutController::class);
+    Route::resource('/abouts', AboutController::class);
+    Route::resource('/partners', PartnerController::class);
+    Route::resource('/mes', MeController::class);
+
+    Route::resource('/infocatchs', InfoCatchController::class);
 
     Route::resource('/clients', ClientController::class);
-
-    // Route::delete('course/{idCourse}/images/{id}', [ImageController::class, 'destroy'])->name('course.images.destroy');
-    // Route::post('course/{id}/images', [ImageController::class, 'store'])->name('course.images.store');
-    // Route::any('course/{id}/image', [ImageController::class, 'create'])->name('course.image.create');
-    // Route::get('course/{id}/images', [ImageController::class, 'index'])->name('course.images.index');
 
     Route::get('course/{id}/category/{idCategory}', [CourseCategoryController::class, 'detachCourseCategories'])->name('course.category.detach');
     Route::post('course/{id}/categories', [CourseCategoryController::class, 'attachCourseCategories'])->name('course.categories.attach');

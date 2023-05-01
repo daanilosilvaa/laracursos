@@ -314,33 +314,48 @@ return [
         [
             'text' => 'Perfil',
             'url'  => '/profile',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-user text-teal',
         ],
         [
             'text' => 'Categoria',
             'url'  => '/categories',
-            'icon' => 'fas fa-fw fa-list',
+            'icon' => 'fas fa-fw fa-list text-teal',
         ],
         [
             'text' => 'Cursos',
             'url'  => '/courses',
-            'icon' => 'fas fa-fw fa-book',
+            'icon' => 'fas fa-fw fa-book text-teal',
         ],
         [
             'text' => 'Clientes',
             'url'  => '/clients',
-            'icon' => 'fas fa-fw fa-users',
+            'icon' => 'fas fa-fw fa-users text-teal',
         ],
         [
             'text' => 'Notificações',
             'url' => '/infocatchs',
-            'icon' => 'fas fa-fw fa-bell ',
+            'icon' => 'fas fa-fw fa-bell text-teal',
 
         ],
         [
             'text' => 'Minha História',
             'url' => '/mes',
-            'icon' => 'fas fa-fw fa-user-tie '
+            'icon' => 'fas fa-fw fa-user-tie text-teal'
+        ],
+        [
+            'text' => 'Parceiros',
+            'url' => '/partners',
+            'icon' => 'fas fa-fw fa-handshake text-teal'
+        ],
+        [
+            'text' => 'Sobre',
+            'url' => '/abouts',
+            'icon' => 'nav-icon fas fa-columns text-teal'
+        ],
+        [
+            'text' => 'Sobre Conteudo',
+            'url' => '/content_abouts',
+            'icon' => 'nav-icon fas fa-columns text-teal'
         ],
         [
             'text' => 'TesteAPi/Cursos',
@@ -350,7 +365,7 @@ return [
         [
             'text' => 'TesteAPi/Category',
             'url'  => '/api/category',
-            'icon' => 'fas fa-fw fa-share',
+            'icon' => 'fas fa-fw fa-share text-danger',
         ],
 
 

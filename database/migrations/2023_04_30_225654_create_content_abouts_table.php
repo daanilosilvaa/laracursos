@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->string('color-title')->nullable();
+            $table->string('color_title')->nullable();
             $table->timestamps();
         });
     }
