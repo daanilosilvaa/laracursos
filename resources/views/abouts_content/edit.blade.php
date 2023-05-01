@@ -3,7 +3,7 @@
 @section('title', "Editando o : $contentAbout->title")
 
 @section('content_header')
-    <h1>Editando Parceiro: {{ $contentAbout->title }}</h1>
+    <h1>Editando Parceiro: <label for="" style="color: {{ $contentAbout->color_title }}">{{ $contentAbout->title }}</label></h1>
 @stop
 
 @section('content')

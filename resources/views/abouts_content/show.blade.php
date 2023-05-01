@@ -3,7 +3,7 @@
 @section('title', "Sobre Conteudo - {$contentAbout->title}")
 
 @section('content_header')
-    <h1>Exibindo Sobre Conteudo {{ $contentAbout->title }}</h1>
+    <h1>Exibindo Sobre Conteudo <label for="" style="color: {{ $contentAbout->color_title }}">{{ $contentAbout->title }}</label></h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     <ul>
-                        <li><strong>Nome: </strong> {{ $contentAbout->title }}</li>
+                        <li><strong>Nome: </strong> <label for="" style="color: {{ $contentAbout->color_title }}">{{ $contentAbout->title }}</label></li>
                     </ul>
                     <ul>
                         <li>
