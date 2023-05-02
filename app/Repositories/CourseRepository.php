@@ -3,22 +3,26 @@
 namespace App\Repositories;
 
 use App\Models\{
-    Course
+    Course,
+    Category,
 };
 use App\Repositories\Contracts\CourseRepositoryInterface;
 
 class CourseRepository implements CourseRepositoryInterface
 {
-    protected $entity;
+    protected $entity, $category;
 
-    public function __construct(Course $course)
+    public function __construct(Course $course, Category $category)
     {
         $this->entity = $course;
+        $this->category = $category;
     }
     public function getAllCourses()
     {
+        $data['course'] = $this->entity->where('active', 'A')->paginate();
+        $data['category'] = $this->category->where('active', 'A')->get();
 
-        return $this->entity->all();
+        return $data;
     }
 
 }

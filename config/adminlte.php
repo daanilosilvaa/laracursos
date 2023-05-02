@@ -367,6 +367,11 @@ return [
             'url'  => '/api/category',
             'icon' => 'fas fa-fw fa-share text-danger',
         ],
+        [
+            'text' => 'TesteAPi/Home',
+            'url'  => '/api/home',
+            'icon' => 'fas fa-fw fa-share text-danger',
+        ],
 
 
 

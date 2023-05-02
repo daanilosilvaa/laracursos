@@ -17,7 +17,7 @@ class CategoryRepository implements CategoryRepositoryInterface
     }
     public function getAllCategories()
     {
-        return $this->entity->all();
+        return $this->entity->where('active', 'A')->get();
     }
 
 }

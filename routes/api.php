@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\{
     CourseApiController,
     CategoryApiController,
+    MeApiController,
 };
 
 
@@ -18,6 +19,8 @@ use App\Http\Controllers\Api\{
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::get('/home', [MeApiController::class, 'index']);
 Route::get('/category', [CategoryApiController::class, 'index']);
 
 Route::get('/courses', [CourseApiController::class, 'index']);
