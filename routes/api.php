@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\{
     CourseApiController,
     CategoryApiController,
     MeApiController,
+    AboutApiController,
 };
 
 
@@ -20,6 +21,8 @@ use App\Http\Controllers\Api\{
 |
 */
 
+
+Route::get('/about', [AboutApiController::class, 'index']);
 Route::get('/home', [MeApiController::class, 'index']);
 Route::get('/category', [CategoryApiController::class, 'index']);
 

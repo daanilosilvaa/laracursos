@@ -7,6 +7,7 @@ use App\Models\{
     Course,
     Image,
     Partner,
+    About,
 };
 use App\Observers\{
     CourseObserver,
@@ -18,12 +19,14 @@ use App\Repositories\Contracts\{
     CourseRepositoryInterface,
     CategoryRepositoryInterface,
     MeRepositoryInterface,
+    InfoRepositoryInterface,
 };
 
 use App\Repositories\{
     CourseRepository,
     CategoryRepository,
     MeRepository,
+    InfoRepository,
 };
 
 class AppServiceProvider extends ServiceProvider
@@ -44,6 +47,10 @@ class AppServiceProvider extends ServiceProvider
        $this->app->bind(
         MeRepositoryInterface::class,
         MeRepository::class
+       );
+       $this->app->bind(
+        InfoRepositoryInterface::class,
+        InfoRepository::class
        );
     }
 

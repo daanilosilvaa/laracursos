@@ -372,6 +372,11 @@ return [
             'url'  => '/api/home',
             'icon' => 'fas fa-fw fa-share text-danger',
         ],
+        [
+            'text' => 'TesteAPi/About',
+            'url'  => '/api/about',
+            'icon' => 'fas fa-fw fa-share text-danger',
+        ],
 
 
 
