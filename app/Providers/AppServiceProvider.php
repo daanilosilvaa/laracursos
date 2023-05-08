@@ -20,6 +20,7 @@ use App\Repositories\Contracts\{
     CategoryRepositoryInterface,
     MeRepositoryInterface,
     InfoRepositoryInterface,
+    SuggestionRepositoryInterface,
 };
 
 use App\Repositories\{
@@ -27,6 +28,7 @@ use App\Repositories\{
     CategoryRepository,
     MeRepository,
     InfoRepository,
+    SuggestionRepository,
 };
 
 class AppServiceProvider extends ServiceProvider
@@ -51,6 +53,10 @@ class AppServiceProvider extends ServiceProvider
        $this->app->bind(
         InfoRepositoryInterface::class,
         InfoRepository::class
+       );
+       $this->app->bind(
+        SuggestionRepositoryInterface::class,
+        SuggestionRepository::class
        );
     }
 

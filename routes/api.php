@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\{
     CategoryApiController,
     MeApiController,
     AboutApiController,
+    SuggestionApiController,
 };
 
 
@@ -21,12 +22,21 @@ use App\Http\Controllers\Api\{
 |
 */
 
+Route::group([
+    'prefix' => '',
+    'namespace' => ''
+], function(){
 
 Route::get('/about', [AboutApiController::class, 'index']);
 Route::get('/home', [MeApiController::class, 'index']);
-Route::get('/category', [CategoryApiController::class, 'index']);
-
+Route::get('/categories', [CategoryApiController::class, 'index']);
 Route::get('/courses', [CourseApiController::class, 'index']);
+
+Route::post('/suggestions',  [CourseApiController::class, 'store']);
+
+});
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
