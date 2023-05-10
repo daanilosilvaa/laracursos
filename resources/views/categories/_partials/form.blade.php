@@ -1,7 +1,7 @@
 @include('includes.alerts')
 <div class="form-group">
     <label for="">* Nome</label>
-    <input type="text" name="name" class="form-control" placeholder="Nome:" value="{{$category->name ?? old('name')}}" autofocus>
+    <input type="text" name="name" class="form-control" placeholder="Nome:" required value="{{$category->name ?? old('name')}}" autofocus>
 </div>
 <fieldset  id="status" class="form-group col-md-4">
     <div class="row">

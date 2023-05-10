@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContentAbout;
+use App\Http\Requests\StoreUpdateAboutContentRequest;
 
 class ContentAboutController extends Controller
 {
@@ -26,8 +27,9 @@ class ContentAboutController extends Controller
             return view('abouts_content.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateAboutContentRequest $request)
     {
+
         $this->contentAbout->create($request->all());
         return redirect()->route('content_abouts.index');
     }
@@ -50,7 +52,7 @@ class ContentAboutController extends Controller
         return view('abouts_content.edit',compact('contentAbout'));
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreUpdateAboutContentRequest $request, $id)
     {
         if (!$contentAbout = $this->contentAbout->find($id)) {
             return redirect()->back();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\InfoCatch;
+use App\Http\Requests\StoreUpdateInfoCastchRequest;
 
 class InfoCatchController extends Controller
 {
@@ -37,7 +38,7 @@ class InfoCatchController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateInfoCastchRequest $request)
     {
         $this->infoCatch->create($request->all());
 
@@ -71,7 +72,7 @@ class InfoCatchController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateInfoCastchRequest $request, string $id)
     {
         if (!$infoCatch = $this->infoCatch->find($id)) {
             return redirect()->back();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Http\Requests\StoreUpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -35,7 +36,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateCategoryRequest $request)
     {
         $this->category->create($request->all());
 
@@ -70,7 +71,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateCategoryRequest $request, string $id)
     {
         if (!$category = $this->category->find($id)) {
              return redirect()->back();
